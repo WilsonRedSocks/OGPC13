@@ -1,0 +1,2 @@
+C:\Users\Owner\OneDrive\Game Project Challenge\Oregon Game Project Challenge\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\Owner\OneDrive\Game Project Challenge\Oregon Game Project Challenge\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
