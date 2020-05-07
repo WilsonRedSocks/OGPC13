@@ -31,6 +31,7 @@ public class animate_text : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space))
         {
+            Collectibles.seedscollected = 0;
             SceneManager.LoadScene("main_scene");
         }
     }

@@ -1,22 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using UnityEngine.UI;
+using System.Collections;
 
 public class menu_script : MonoBehaviour
 {
     public GameObject settingscanvas;
     public GameObject pausecanvas;
-    public GameObject hudcanvas;
-    public Texture2D crosshair;
+    public AudioMixer master;
+    public Slider masterslider;
+    public Slider musicslider;
+    public Slider effectsslider;
+    public Texture2D pointer;
+
+
+    void Awake()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
+        float temp;
+        master.GetFloat("master", out temp);
+        masterslider.value = temp;
+        Debug.Log(temp);
+        master.GetFloat("music", out temp);
+        musicslider.value = temp;
+        master.GetFloat("effects", out temp);
+        effectsslider.value = temp;
+    }
 
     public void resume()
     {
-        pausecanvas.SetActive(false);
+        SceneManager.LoadScene(1);
+        pausecanvas.SetActive(true);
         settingscanvas.SetActive(false);
-        Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.SetCursor(crosshair, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     public void settings()
@@ -28,6 +44,31 @@ public class menu_script : MonoBehaviour
     public void restart()
     {
         SceneManager.LoadScene(0);
-        Time.timeScale = 1;
+    }
+
+    public void back()
+    {
+        settingscanvas.SetActive(false);
+        pausecanvas.SetActive(true);
+    }
+
+    public void setmasterlevel(float level)
+    {
+        master.SetFloat("master", level);
+    }
+
+    public void seteffectslevel(float level)
+    {
+        master.SetFloat("effects", level);
+    }
+
+    public void setmusiclevel(float level)
+    {
+        master.SetFloat("music", level);
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 }

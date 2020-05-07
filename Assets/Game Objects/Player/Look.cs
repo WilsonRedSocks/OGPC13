@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Look : MonoBehaviour
 {
@@ -11,10 +12,6 @@ public class Look : MonoBehaviour
     //define the x axis variable
     private float Xaxis = 0;
 
-    //main menu
-    public GameObject pause;
-    public GameObject hud;
-
     //create the player vector3
     Vector3 rotation = new Vector3(0, 0, 0);
 
@@ -23,7 +20,7 @@ public class Look : MonoBehaviour
     {
         //lock the mouse cursor to center screen
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.SetCursor(crosshair, Vector2.zero, CursorMode.ForceSoftware);
+        Cursor.SetCursor(crosshair, new Vector2(16,16), CursorMode.ForceSoftware);
     }
 
     void Update()
@@ -31,10 +28,7 @@ public class Look : MonoBehaviour
         //menu check
         if(Input.GetKey(KeyCode.Escape))
         {
-            Debug.Log("test");
-            pause.SetActive(true);
-            hud.SetActive(false);
-            Time.timeScale = 0;
+            SceneManager.LoadScene(2);
             Cursor.lockState = CursorLockMode.None;
         }
         //create the float for the mouse x axis
