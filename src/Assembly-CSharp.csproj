@@ -61,6 +61,7 @@
      <Compile Include="Assets\Game Objects\Player\Collectibles.cs" />
      <Compile Include="Assets\Game Objects\Player\Look.cs" />
      <Compile Include="Assets\Game Objects\Player\Movement.cs" />
+     <Compile Include="Assets\Game Objects\seed.cs" />
      <Compile Include="Assets\Game Objects\seeds\collectible.cs" />
      <Compile Include="Assets\Game Objects\seeds\collectiblepositions.cs" />
      <Compile Include="Assets\Menu Assets\menu_script.cs" />

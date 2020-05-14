@@ -1,23 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using UnityEngine;
 
 public class collectiblepositions : MonoBehaviour
 {
-    public List<Vector3> positions;
-
     public GameObject seed;
 
-    public List<GameObject> seeds;
-    
-    void Start()
+    public List<Vector3> seeds;
+
+    void Awake()
     {
-        positions = positions.OrderBy(x => Random.value).ToList();
+        //gameObject.tag = "seed creator";
+        //positions = positions.OrderBy(x => 5).ToList();
         for (int i = 0; i < 10; i++)
         {
-            Instantiate(seed, positions[i], Quaternion.identity);
+            Instantiate(seed, seeds[i], Quaternion.identity);
         }
-        Destroy(gameObject);
+
     }
 }

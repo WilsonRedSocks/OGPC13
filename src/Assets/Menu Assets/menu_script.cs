@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using System.Collections;
+using System.Threading;
 
 public class menu_script : MonoBehaviour
 {
@@ -12,27 +13,21 @@ public class menu_script : MonoBehaviour
     public Slider masterslider;
     public Slider musicslider;
     public Slider effectsslider;
-    public Texture2D pointer;
+    public Texture2D crosshair;
 
 
-    void Awake()
+    public void open()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);
-        float temp;
-        master.GetFloat("master", out temp);
-        masterslider.value = temp;
-        Debug.Log(temp);
-        master.GetFloat("music", out temp);
-        musicslider.value = temp;
-        master.GetFloat("effects", out temp);
-        effectsslider.value = temp;
     }
 
     public void resume()
     {
-        SceneManager.LoadScene(1);
-        pausecanvas.SetActive(true);
+        pausecanvas.SetActive(false);
         settingscanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.SetCursor(crosshair, Vector2.zero, CursorMode.ForceSoftware);
+        Time.timeScale = 1;
     }
 
     public void settings()

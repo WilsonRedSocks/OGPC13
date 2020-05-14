@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Seed
+  - seed spawn area
+  - area
+  - audio
   layers:
   - Default
   - TransparentFX
