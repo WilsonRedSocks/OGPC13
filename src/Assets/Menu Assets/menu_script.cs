@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using System.Collections;
-using System.Threading;
 
 public class menu_script : MonoBehaviour
 {
@@ -14,7 +13,7 @@ public class menu_script : MonoBehaviour
     public Slider musicslider;
     public Slider effectsslider;
     public Texture2D crosshair;
-
+    public GameObject hud;
 
     public void open()
     {
@@ -28,6 +27,7 @@ public class menu_script : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.SetCursor(crosshair, Vector2.zero, CursorMode.ForceSoftware);
         Time.timeScale = 1;
+        hud.SetActive(true);
     }
 
     public void settings()
@@ -65,5 +65,10 @@ public class menu_script : MonoBehaviour
     public void quit()
     {
         Application.Quit();
+    }
+
+    public void start()
+    {
+        SceneManager.LoadScene(1);
     }
 }

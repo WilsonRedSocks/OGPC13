@@ -69,6 +69,7 @@
      <Compile Include="Assets\Packages\SlimUI\Tech Menu\Scripts\UIElementDragger.cs" />
      <Compile Include="Assets\Packages\SlimUI\Tech Menu\Scripts\UIManagerTech.cs" />
      <Compile Include="Assets\animate_text.cs" />
+     <Compile Include="Assets\start_script.cs" />
      <None Include="Assets\Packages\SlimUI\Tech Menu\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Packages\SlimUI\Tech Menu\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Packages\SlimUI\Tech Menu\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
